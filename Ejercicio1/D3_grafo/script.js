@@ -1,5 +1,6 @@
 console.log ("Inicializando Script")
 
+//Se incluye la url con los datos y los nodos donde se incluye mi nombre Paula en un reporsitorio público
 url = "https://raw.githubusercontent.com/pacostas0102/ExamenHerramientas/refs/heads/main/Ejercicio1/Data/DataGrafoD3.js"
 
 d3.json(url).then(function(data){
@@ -48,12 +49,12 @@ d3.json(url).then(function(data){
     // Crear el espacio para los nodos
     let nodes = svg
             .append("g")
-            .attr("class", "nodes")
+            .attr("class", "nodes") //se le asina la clase nodo al atributo g
             .selectAll("g")
             .data(data.nodes)
             .join("g")
             .attr("r", 5)
-            .attr("fill", d => escalaColor(d.group))
+            .attr("fill", d => escalaColor(d.group)) //Se rellena con el color del grupo
     
     circles = nodes.append("circle")
             .attr("r",5)
